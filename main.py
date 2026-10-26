@@ -1,6 +1,9 @@
 import secrets
 import string
 
+version = "1.0.0"
+
+
 upper = True
 lower = True
 numbers = True
