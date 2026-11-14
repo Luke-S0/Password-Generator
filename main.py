@@ -3,11 +3,26 @@ import string
 
 version = "1.0.0"
 
+def strInputToBool(message):
+    string = ""
+    while True:
+        string = input(message).lower()
 
-upper = True
-lower = True
-numbers = True
-symbols = True
+        if string != "":
+            if string[0] in ["y", "n"]:
+                break
+    
+    if string[0] == "y":
+        return True
+    elif string[0] == "n":
+        return False
+    
+
+
+upper = strInputToBool("Uppercase?")
+lower = strInputToBool("Lowercase?")
+numbers = strInputToBool("Numbers?")
+symbols = strInputToBool("Symbols/punctuation?")
 length = 10
 
 pool = ""
