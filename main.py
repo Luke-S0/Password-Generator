@@ -17,13 +17,20 @@ def strInputToBool(message):
     elif string[0] == "n":
         return False
     
-
+def getIntInput(message):
+    while True:
+        try:
+            integer = int(input(message))
+            break
+        except:
+            pass
+    return integer
 
 upper = strInputToBool("Uppercase?")
 lower = strInputToBool("Lowercase?")
 numbers = strInputToBool("Numbers?")
 symbols = strInputToBool("Symbols/punctuation?")
-length = 10
+length = getIntInput("Length")
 
 pool = ""
 if upper: pool += string.ascii_uppercase
