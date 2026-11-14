@@ -1,7 +1,7 @@
 import secrets
 import string
 
-version = "1.0.0"
+version = "1.0.1"
 
 def strInputToBool(message):
     string = ""
