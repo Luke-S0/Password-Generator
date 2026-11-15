@@ -54,6 +54,9 @@ def generatePassword(pool, length):
     for i in range(length-len(pw)):
         pw += secrets.choice(pool)
 
+    pw = list(pw)
+    secrets.SystemRandom().shuffle(pw)
+    pw = "".join(pw)
     return pw
 
 upper = strInputToBool("Uppercase?")
