@@ -26,19 +26,31 @@ def getIntInput(message):
             pass
     return integer
 
+def buildPool(upper, lower, numbers, symbols):
+    pool = ""
+
+    if upper: 
+        pool += string.ascii_uppercase
+    if lower: 
+        pool += string.ascii_lowercase
+    if numbers: 
+        pool += string.digits
+    if symbols: 
+        pool += string.punctuation
+
+    return pool
+
 upper = strInputToBool("Uppercase?")
 lower = strInputToBool("Lowercase?")
 numbers = strInputToBool("Numbers?")
 symbols = strInputToBool("Symbols/punctuation?")
 length = getIntInput("Length")
 
-pool = ""
-if upper: pool += string.ascii_uppercase
-if lower: pool += string.ascii_lowercase
-if numbers: pool += string.digits
-if symbols: pool += string.punctuation
-
+pool = buildPool(upper, lower, numbers, symbols)
 pw = ""
+
+
+
 for i in range(length):
     pw += secrets.choice(pool)
 
