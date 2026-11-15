@@ -40,6 +40,22 @@ def buildPool(upper, lower, numbers, symbols):
 
     return pool
 
+def generatePassword(pool, length):
+    pw = ""
+    if upper: 
+        pw += secrets.choice(string.ascii_uppercase)
+    if lower: 
+        pw += secrets.choice(string.ascii_lowercase)
+    if numbers: 
+        pw += secrets.choice(string.digits)
+    if symbols: 
+        pw += secrets.choice(string.punctuation)
+
+    for i in range(length-len(pw)):
+        pw += secrets.choice(pool)
+
+    return pw
+
 upper = strInputToBool("Uppercase?")
 lower = strInputToBool("Lowercase?")
 numbers = strInputToBool("Numbers?")
@@ -47,11 +63,8 @@ symbols = strInputToBool("Symbols/punctuation?")
 length = getIntInput("Length")
 
 pool = buildPool(upper, lower, numbers, symbols)
-pw = ""
+pw = generatePassword(pool, length)
 
 
-
-for i in range(length):
-    pw += secrets.choice(pool)
 
 print(pw)
