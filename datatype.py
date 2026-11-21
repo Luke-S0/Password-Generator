@@ -1,7 +1,9 @@
+import ui
+
 def strInputToBool(message):
     string = ""
     while True:
-        string = input(message).lower()
+        string = ui.inputField(message).lower()
 
         if string != "":
             if string[0] in ["y", "n"]:
@@ -15,7 +17,7 @@ def strInputToBool(message):
 def getIntInput(message):
     while True:
         try:
-            integer = int(input(message))
+            integer = int(ui.inputField(message))
             break
         except:
             pass
