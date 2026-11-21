@@ -1,5 +1,6 @@
 import secrets
 import string
+import ui
 
 version = "1.0.2"
 
@@ -59,6 +60,8 @@ def generatePassword(pool, length):
     pw = "".join(pw)
     return pw
 
+ui.header("Password Generator")
+
 upper = strInputToBool("Uppercase?")
 lower = strInputToBool("Lowercase?")
 numbers = strInputToBool("Numbers?")
@@ -67,7 +70,5 @@ length = getIntInput("Length")
 
 pool = buildPool(upper, lower, numbers, symbols)
 pw = generatePassword(pool, length)
-
-
 
 print(pw)

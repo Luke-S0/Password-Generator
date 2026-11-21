@@ -1,0 +1,4 @@
+def header(message):
+    print(f"┌{"─"*len(message)}─────┐") # Prints the first line of box to fit the message
+    print("│ " + message     + "    │") # Prints the message with space on right side to align │ with the rest of the box. 
+    print(f"└{"─"*len(message)}─────┘") # Prints the last line of box to fit the message
