@@ -2,7 +2,7 @@ import ui
 import datatype
 import passgen
 
-version = "1.0.2"
+version = "1.1.0"
 
 ui.header(f"Password Generator {version}")
 
