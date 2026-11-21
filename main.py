@@ -4,7 +4,7 @@ import passgen
 
 version = "1.0.2"
 
-ui.header("Password Generator")
+ui.header(f"Password Generator {version}")
 
 upper = datatype.strInputToBool("Uppercase?")
 lower = datatype.strInputToBool("Lowercase?")
