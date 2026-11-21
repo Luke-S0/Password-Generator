@@ -1,31 +1,11 @@
 import secrets
 import string
 import ui
+import datatype
 
 version = "1.0.2"
 
-def strInputToBool(message):
-    string = ""
-    while True:
-        string = input(message).lower()
 
-        if string != "":
-            if string[0] in ["y", "n"]:
-                break
-    
-    if string[0] == "y":
-        return True
-    elif string[0] == "n":
-        return False
-    
-def getIntInput(message):
-    while True:
-        try:
-            integer = int(input(message))
-            break
-        except:
-            pass
-    return integer
 
 def buildPool(upper, lower, numbers, symbols):
     pool = ""
@@ -62,11 +42,11 @@ def generatePassword(pool, length):
 
 ui.header("Password Generator")
 
-upper = strInputToBool("Uppercase?")
-lower = strInputToBool("Lowercase?")
-numbers = strInputToBool("Numbers?")
-symbols = strInputToBool("Symbols/punctuation?")
-length = getIntInput("Length")
+upper = datatype.strInputToBool("Uppercase?")
+lower = datatype.strInputToBool("Lowercase?")
+numbers = datatype.strInputToBool("Numbers?")
+symbols = datatype.strInputToBool("Symbols/punctuation?")
+length = datatype.getIntInput("Length")
 
 pool = buildPool(upper, lower, numbers, symbols)
 pw = generatePassword(pool, length)
