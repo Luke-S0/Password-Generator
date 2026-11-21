@@ -5,31 +5,24 @@ import datatype
 
 version = "1.0.2"
 
-
-
-def buildPool(upper, lower, numbers, symbols):
+# Merge buildPool with generatePassword - the pool is constructed in password generation.
+def generatePassword(upper, lower, numbers, symbols, length):
+    pw = ""
     pool = ""
-
     if upper: 
         pool += string.ascii_uppercase
+        pw += secrets.choice(string.ascii_uppercase)
+        
     if lower: 
         pool += string.ascii_lowercase
+        pw += secrets.choice(string.ascii_lowercase)
+        
     if numbers: 
         pool += string.digits
+        pw += secrets.choice(string.digits)
+        
     if symbols: 
         pool += string.punctuation
-
-    return pool
-
-def generatePassword(pool, length):
-    pw = ""
-    if upper: 
-        pw += secrets.choice(string.ascii_uppercase)
-    if lower: 
-        pw += secrets.choice(string.ascii_lowercase)
-    if numbers: 
-        pw += secrets.choice(string.digits)
-    if symbols: 
         pw += secrets.choice(string.punctuation)
 
     for i in range(length-len(pw)):
@@ -48,7 +41,6 @@ numbers = datatype.strInputToBool("Numbers?")
 symbols = datatype.strInputToBool("Symbols/punctuation?")
 length = datatype.getIntInput("Length")
 
-pool = buildPool(upper, lower, numbers, symbols)
-pw = generatePassword(pool, length)
+pw = generatePassword(upper, lower, numbers, symbols, length)
 
 print(pw)
