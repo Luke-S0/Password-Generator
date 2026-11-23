@@ -16,6 +16,10 @@ ui.header("Other settings")
 length = datatype.getIntInput("Length")
 
 # generate password
-pw = passgen.generatePassword(upper, lower, numbers, symbols, length)
-
-print(pw)
+while True:
+    print("PASSWORD")
+    pw = passgen.generatePassword(upper, lower, numbers, symbols, length)
+    print(pw)
+    exitChoice = input("press enter to generate a new password, or type anything and then press enter to end the program")
+    if exitChoice != "":
+        break
