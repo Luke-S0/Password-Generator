@@ -6,7 +6,13 @@ def header(message):
     print(f"└{"─"*len(message)}─────┘") # Prints the last line of box to fit the message
 
 def inputField(prompt):
-    value = input(f"> {prompt} ")
+    for i in range(0,len(prompt.splitlines())):
+        output = f"│ {prompt.splitlines()[i]} "
+        if i == len(prompt.splitlines())-1: # on last line, add end = "" so that input is on the same line.
+            print(output, end="")
+        else:
+            print(output)
+    value = input()
     return value
 
 def clearScreen():
