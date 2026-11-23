@@ -5,8 +5,7 @@ import passgen
 version = "1.1.0"
 
 def main():
-    ui.header(f"Password Generator")
-
+    ui.clearScreen()
     ui.header("Character pool")
     upper = datatype.strInputToBool("Uppercase?")
     lower = datatype.strInputToBool("Lowercase?")
@@ -19,9 +18,8 @@ def main():
     # generate password
     while True:
         ui.clearScreen()
-        ui.header("PASSWORD")
         pw = passgen.generatePassword(upper, lower, numbers, symbols, length)
-        print(pw)
+        ui.header(f"Password = {pw}")
         exitChoice = input("press enter to generate a new password, or type anything and then press enter to end the program")
         if exitChoice != "":
             break

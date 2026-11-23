@@ -6,7 +6,7 @@ def header(message):
     print(f"└{"─"*len(message)}─────┘") # Prints the last line of box to fit the message
 
 def inputField(prompt):
-    value = input(f"│ {prompt} ")
+    value = input(f"> {prompt} ")
     return value
 
 def clearScreen():
@@ -15,4 +15,4 @@ def clearScreen():
     else:
         os.system("clear")
 
-    header(f"Password Generator")
+    print("│ Password Generator")
