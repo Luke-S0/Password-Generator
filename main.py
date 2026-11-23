@@ -4,13 +4,23 @@ import passgen
 import globals
 
 def settings():
-    ui.clearScreen()
+    
     # SECTION 1 - CHARACTER POOL
-    ui.header("Character pool")
-    upper = datatype.strInputToBool("Uppercase?")
-    lower = datatype.strInputToBool("Lowercase?")
-    numbers = datatype.strInputToBool("Numbers?")
-    symbols = datatype.strInputToBool("Symbols/punctuation?")
+    
+    while True:
+        ui.clearScreen()
+        ui.header("Character pool")
+        upper = datatype.strInputToBool("Uppercase?")
+        lower = datatype.strInputToBool("Lowercase?")
+        numbers = datatype.strInputToBool("Numbers?")
+        symbols = datatype.strInputToBool("Symbols/punctuation?")
+
+        if not(upper) or not(lower) or not(numbers) or not(symbols):
+            input("\n!! Password must have at least one type of character. Press ENTER to continue")
+            pass
+        else:
+            
+            break
 
     # SECTION 2 - PASSWORD LENGTH
     ui.header("Other settings")

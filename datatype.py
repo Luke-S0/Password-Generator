@@ -19,6 +19,8 @@ def getIntInput(message):
         try:
             integer = int(ui.inputField(message))
             break
+        except KeyboardInterrupt:
+            raise SystemExit
         except:
             pass
     return integer
