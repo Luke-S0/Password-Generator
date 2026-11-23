@@ -3,7 +3,7 @@ import datatype
 import passgen
 import globals
 
-def main():
+def settings():
     ui.clearScreen()
     ui.header("Character pool")
     upper = datatype.strInputToBool("Uppercase?")
@@ -14,6 +14,10 @@ def main():
     ui.header("Other settings")
     length = datatype.getIntInput("Length")
 
+    return upper, lower, numbers, symbols, length
+
+def main():
+    upper, lower, numbers, symbols, length = settings()
     # generate password
     while True:
         ui.clearScreen()
