@@ -1,8 +1,7 @@
 import ui
 import datatype
 import passgen
-
-version = "1.1.0"
+import globals
 
 def main():
     ui.clearScreen()

@@ -1,5 +1,5 @@
 import os
-
+import globals
 def header(message):
     print(f"┌{"─"*len(message)}─────┐") # Prints the first line of box to fit the message
     print("│ " + message     + "    │") # Prints the message with space on right side to align │ with the rest of the box. 
@@ -15,4 +15,4 @@ def clearScreen():
     else:
         os.system("clear")
 
-    print("│ Password Generator")
+    print(f"│ {globals.name} (v{globals.version})")
