@@ -15,7 +15,7 @@ def settings():
         numbers = datatype.strInputToBool("Numbers?")
         symbols = datatype.strInputToBool("Symbols/punctuation?")
 
-        if not(upper) or not(lower) or not(numbers) or not(symbols):
+        if not(upper) and not(lower) and not(numbers) and not(symbols):
             input("\n!! Password must have at least one type of character. Press ENTER to continue")
             pass
         else:
@@ -23,8 +23,16 @@ def settings():
             break
 
     # SECTION 2 - PASSWORD LENGTH
-    ui.header("Other settings")
-    length = datatype.getIntInput("Length")
+    while True:
+        ui.clearScreen()
+        ui.header("Other settings")
+        length = datatype.getIntInput("Length")
+        minLength = sum([upper, lower, numbers, symbols])
+        if length < minLength:
+            input(f"\n!! Password must have at least {minLength} characters. Press ENTER to continue")
+            pass
+        else:
+            break
 
     # RETURN NEW CONFIGURATION VALUES
     return upper, lower, numbers, symbols, length
